@@ -64,6 +64,7 @@ export default function Signin() {
           Not your device? Use a private window. See our 
           <span className="text-white cursor-pointer"> Privacy Policy</span> for more info.
         </p>
+        <p className="warning">Demo app – do not use your real password.</p>
       </div>
     </div>
   );

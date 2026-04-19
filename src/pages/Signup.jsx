@@ -68,6 +68,7 @@ export default function Signup() {
           By creating an account you certify that you are over the age of 18 and agree to our 
           <span className="text-white"> Privacy Policy</span> and <span className="text-white"> Cookie Policy</span>.
         </p>
+        <p className="warning">Demo app – do not use your real password.</p>
       </div>
     </div>
   );
