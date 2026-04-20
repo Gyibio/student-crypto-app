@@ -6,9 +6,9 @@ import { CommonButton } from "../components/common/Fbutton";
 import hero3 from "../assets/Hero3.avif";
 import hero4 from "../assets/Hero4.avif";
 import hero5 from "../assets/Hero5.avif";
-import hero61 from "../assets/Hero61.png";
-import hero62 from "../assets/Hero62.png";
-import hero63 from "../assets/Hero63.png";
+import hero61 from "../assets/hero61.png";
+import hero62 from "../assets/hero62.png";
+import hero63 from "../assets/hero63.png";
 import hero7 from "../assets/hero7.avif";
 import Footer from "../components/layouts/Footer";
 
@@ -47,7 +47,7 @@ function Home() {
   ];
   return (
     <div>
-        <Navbar/>
+      <Navbar />
       <div className="lg:grid-cols-2 grid grid-cols-1 gap-10 p-5 items-center lg:mt-10">
         <div className="order-2 lg:order-1">
           <img className="rounded-4xl" src={Hero1} />
@@ -232,7 +232,9 @@ function Home() {
         </div>
       </div>
       <div className="flex flex-col lg:justify-center items-center gap-5 mt-50">
-        <div className="opacity-60 lg:text-[15px] text-[14px] ">DEX trading is offered by Coinbase Bermuda Technologies Ltd.</div>
+        <div className="opacity-60 lg:text-[15px] text-[14px] ">
+          DEX trading is offered by Coinbase Bermuda Technologies Ltd.
+        </div>
         <div className="lg:w-250 opacity-60 text-center text-[14px] tracking-wide lg:text-[15px] lg:px-0 px-4">
           Products and features may not be available in all regions. Information
           is for or informational purposes only, and is not (i) an offer, or
@@ -242,7 +244,7 @@ function Home() {
           or investment recommendations. Trading cryptocurrency comes with risk.
         </div>
       </div>
-          <Footer/>
+      <Footer />
     </div>
   );
 }
