@@ -28,8 +28,8 @@ export default function Password() {
         alert("Account created! Please log in.");
         navigate("/signin");
       }
-    } catch (err) {
-      alert(err.response?.data?.error || "Registration failed", err);
+    } catch (error) {
+      alert("Registration failed", error);
     }
   };
 
