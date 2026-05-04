@@ -4,6 +4,7 @@ import MainSignup from "./pages/MainSignup.jsx";
 import Signup from "./pages/Signup.jsx";
 import Signin from "./pages/Signin.jsx";
 import WarningBanner from "./components/WarningBanner.jsx";
+import Password from "./pages/password.jsx";
 function App() {
   return (
     
@@ -14,6 +15,7 @@ function App() {
         <Route path="/signupMain" element={<MainSignup />} />
         <Route path='/signupMain/signup' element={<Signup/>}/>
         <Route path='/signin' element ={<Signin/>}/>
+        <Route path='signupMain/signup/password' element ={<Password/>}/>
       </Routes>
     </div>
   );
