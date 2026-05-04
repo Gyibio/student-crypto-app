@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Password() {
   const [name, setName] = useState("");
@@ -28,7 +29,7 @@ export default function Password() {
         navigate("/signin");
       }
     } catch (err) {
-      alert(err.response?.data?.error || "Registration failed");
+      alert(err.response?.data?.error || "Registration failed", err);
     }
   };
 
