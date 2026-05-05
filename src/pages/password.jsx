@@ -16,14 +16,9 @@ export default function Password() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://student-crypto-backend.onrender.com/api/auth/register",
-        {
-          name,
-          email,
-          password,
-        },
+        `${import.meta.env.VITE_API_URL}/api/auth/register`,
+        { name, email, password },
       );
-
       if (response.status === 201) {
         alert("Account created! Please log in.");
         navigate("/signin");
