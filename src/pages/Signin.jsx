@@ -49,8 +49,8 @@ export default function Signin() {
           Sign in to Coinbase
         </h1>
 
-        {/* Email Input */}
-        <div className="flex flex-col gap-2 mb-6">
+        <form  onSubmit={handleSignin}
+          className="flex flex-col gap-2 mb-6">
           <label className="text-sm font-bold">Email</label>
           <input
             type="email"
@@ -65,7 +65,7 @@ export default function Signin() {
             placeholder="Enter password"
             className="w-full bg-black border border-[#2d2d2d] rounded-lg p-4 text-white focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] outline-none transition-all placeholder:text-[#575757]"
           />
-        </div>
+        </form>
 
         <button className="w-full bg-[#1e2b4d] text-[#4d66a8] py-4 rounded-full font-bold text-lg mb-8">
           Continue
