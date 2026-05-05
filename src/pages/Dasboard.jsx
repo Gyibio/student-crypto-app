@@ -17,7 +17,7 @@ export default function Dashboard() {
 
         const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/profile`, {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem(token)}`
+            Authorization: `Bearer ${(token)}`
           }
         });
         setUser(response.data);
