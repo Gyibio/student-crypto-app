@@ -18,7 +18,7 @@ export default function Signin() {
         { email, password },
       );
       if (response.status === 200) {
-        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(response.data.user));
 
         alert("Signin Succcesful");
