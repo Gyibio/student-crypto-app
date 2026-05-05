@@ -1,8 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.svg';
+import axios from 'axios';
+
 
 export default function Signin() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false); 
+  const navigate = useNavigate();
+
+  const handleSignin = async(e) => {
+    e.preventDefault();
+    setLoading(true)
+      try {
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_URL}/api/auth/login`, 
+          { email, password },
+        );
+        if (response.status === 200) {
+
+          localStorage.setItem('token', response.data.token)
+          localStorage.setItem('user', JSON.stringify(response.data.user))
+
+          alert("Signin Succcesful");
+
+          navigate('/dashboard')
+
+        }
+      } catch (error) {
+        const message = error.response?.data?.message || "Login failed. Please check your credentials.";
+        alert(message); 
+      }finally{
+        setLoading(false)
+      }
+  }
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center pt-8 px-6 font-sans">
       {/* Header with White "C" Logo */}
@@ -22,7 +54,15 @@ export default function Signin() {
           <label className="text-sm font-bold">Email</label>
           <input
             type="email"
+            onChange={(e)=> setEmail(e.target.value)}
             placeholder="Your email address"
+            className="w-full bg-black border border-[#2d2d2d] rounded-lg p-4 text-white focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] outline-none transition-all placeholder:text-[#575757]"
+          />
+          <label className="text-sm font-bold">Password</label>
+          <input
+            type="password"
+            onChange={(e)=> setPassword(e.target.value)}
+            placeholder="Enter password"
             className="w-full bg-black border border-[#2d2d2d] rounded-lg p-4 text-white focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] outline-none transition-all placeholder:text-[#575757]"
           />
         </div>
