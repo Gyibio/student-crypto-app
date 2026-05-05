@@ -23,8 +23,8 @@ export default function Dashboard() {
         setUser(response.data);
       } catch (error) {
         console.error("Error fetching profile", error);
-        localStorage.removeItem('token');
-        navigate('/signin');
+        // localStorage.removeItem('token');
+        // navigate('/signin');
       }
     };
 
