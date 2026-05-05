@@ -27,18 +27,25 @@ const handleSignin = async (e) => {
 
       if (token) {
         localStorage.setItem("token", token);
+        console.log("Token Saved successfully")
+      }else {
+        console.error("Token was undefined in response data")
+      }
         // Only stringify if user exists to prevent errors
         if (userData) {
           localStorage.setItem("user", JSON.stringify(userData));
         }
 
         alert("Signin Successful");
+        setTimeout(()=> {
         navigate("/dashboard");
+
+        }, 100)
       } else {
         alert("Server did not return a token. Check backend deployment.");
       }
     }
-  } catch (error) {
+  catch (error) {
     console.error("Login Error Details:", error.response?.data);
     const message = error.response?.data || "Login failed.";
     alert(message);
