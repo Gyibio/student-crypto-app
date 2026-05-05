@@ -9,32 +9,43 @@ export default function Signin() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSignin = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/auth/login`,
-        { email, password },
-      );
-      if (response.status === 200) {
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("user", JSON.stringify(response.data.user));
+const handleSignin = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  try {
+    const response = await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/auth/login`,
+      { email, password }
+    );
 
-        alert("Signin Succcesful");
+    console.log("Full Backend Response:", response.data); // IMPORTANT: Check this in browser console
 
+    if (response.status === 200) {
+      // Extract data carefully
+      const token = response.data.token;
+      const userData = response.data.user;
+
+      if (token) {
+        localStorage.setItem("token", token);
+        // Only stringify if user exists to prevent errors
+        if (userData) {
+          localStorage.setItem("user", JSON.stringify(userData));
+        }
+
+        alert("Signin Successful");
         navigate("/dashboard");
+      } else {
+        alert("Server did not return a token. Check backend deployment.");
       }
-    } catch (error) {
-      const message =
-        error.response?.data?.message ||
-        "Login failed. Please check your credentials.";
-      alert(message);
-    } finally {
-      setLoading(false);
     }
-  };
-  return (
+  } catch (error) {
+    console.error("Login Error Details:", error.response?.data);
+    const message = error.response?.data || "Login failed.";
+    alert(message);
+  } finally {
+    setLoading(false);
+  }
+};  return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center pt-8 px-6 font-sans">
       {/* Header with White "C" Logo */}
       <div className="w-full max-w-7xl mb-24">
