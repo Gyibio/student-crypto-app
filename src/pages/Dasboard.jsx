@@ -34,7 +34,7 @@ export default function Dashboard() {
   if (!user) return <div className="text-white text-center mt-20">Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-black text-white p-8 flex flex-col items-center">
+    <div className="min-h-screen bg-black text-white p-8 flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-4">Welcome back, {user.name}!</h1>
       <div className="bg-[#121212] border border-[#2d2d2d] p-6 rounded-xl max-w-md">
         <h2 className="text-xl font-bold mb-4 border-b border-[#2d2d2d] pb-2">User Profile</h2>
@@ -44,7 +44,7 @@ export default function Dashboard() {
         
         <button 
           onClick={() => { localStorage.clear(); navigate('/signin'); }}
-          className="mt-6 text-red-500 hover:underline"
+          className="mt-6 text-red-500 hover:underline flex flex-col items-center justify-center"
         >
           Sign Out
         </button>
