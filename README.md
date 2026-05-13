@@ -2,8 +2,6 @@
 # Coinbase Clone - React & Tailwind CSS Assignment
 
 ## 📋 Overview
-- **Live Demo:** [View Live Site]
-- **GitHub Repository:** [View Code]
 
 In this assignment, you will build a full clone of the [Coinbase](https://www.coinbase.com/) website using **React.js** and **Tailwind CSS**. This project will help you practice component-based architecture, client-side routing, responsive design, and modern CSS utilities.
 
