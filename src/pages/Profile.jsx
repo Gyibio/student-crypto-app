@@ -35,19 +35,26 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen bg-black text-white p-8 flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-4">Welcome back, {user.name}!</h1>
       <div className="bg-[#121212] border border-[#2d2d2d] p-6 rounded-xl max-w-md">
         <h2 className="text-xl font-bold mb-4 border-b border-[#2d2d2d] pb-2">User Profile</h2>
         <p className="mb-2"><span className="text-gray-500">Name:</span> {user.name}</p>
         <p className="mb-2"><span className="text-gray-500">Email:</span> {user.email}</p>
         <p className="mb-2"><span className="text-gray-500">Account ID:</span> {user._id}</p>
         
+        <div>
+          <button 
+          onClick={() => navigate('/dashboard')}
+          className="w-full mt-6 bg-[#0052FF] py-3 rounded-full font-bold hover:bg-[#004BD6] transition-all"
+          >
+            Go to dashboard
+          </button>
         <button 
           onClick={() => { localStorage.clear(); navigate('/signin'); }}
-          className="mt-6 text-red-500 hover:underline flex flex-col items-center justify-center"
+          className="mt-6 text-red-500 hover:underline flex flex-col"
         >
           Sign Out
         </button>
+        </div>
       </div>
     </div>
   );
