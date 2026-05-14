@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import axios from "axios";
+import LoadingSpinner from "../components/common/LoadingSpinner";
 
 export default function Signin() {
   const [email, setEmail] = useState("");
@@ -52,7 +53,12 @@ const handleSignin = async (e) => {
   } finally {
     setLoading(false);
   }
-};  return (
+};  
+  if (loading) {
+    return <LoadingSpinner message="Connecting to secure vault..." />;
+  }
+
+return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center pt-8 px-6 font-sans">
       {/* Header with White "C" Logo */}
       <div className="w-full max-w-7xl mb-24">
