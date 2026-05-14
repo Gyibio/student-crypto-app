@@ -41,10 +41,10 @@ export default function Profile() {
         <p className="mb-2"><span className="text-gray-500">Email:</span> {user.email}</p>
         <p className="mb-2"><span className="text-gray-500">Account ID:</span> {user._id}</p>
         
-        <div>
+        <div className='flex flex-col justify-between'>
           <button 
           onClick={() => navigate('/dashboard')}
-          className="w-full mt-6 bg-[#0052FF] py-3 rounded-full font-bold hover:bg-[#004BD6] transition-all"
+          className="mt-6 bg-[#0052FF] py-3 rounded-full font-bold hover:bg-[#004BD6] transition-all"
           >
             Go to dashboard
           </button>

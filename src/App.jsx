@@ -6,6 +6,7 @@ import Signin from "./pages/Signin.jsx";
 import WarningBanner from "./components/WarningBanner.jsx";
 import Password from "./pages/password.jsx";
 import Profile from "./pages/Profile.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
 function App() {
   return (
     
@@ -18,6 +19,7 @@ function App() {
         <Route path='/signin' element ={<Signin/>}/>
         <Route path='signupMain/signup/password' element ={<Password/>}/>
         <Route path='/profile' element={<Profile/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
     </div>
   );
