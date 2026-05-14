@@ -38,7 +38,7 @@ const handleSignin = async (e) => {
 
         alert("Signin Successful");
         setTimeout(()=> {
-        navigate("/dashboard");
+        navigate("/profile");
 
         }, 100)
       } else {
