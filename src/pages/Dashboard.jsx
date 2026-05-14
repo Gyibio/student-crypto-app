@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import LoadingSpinner from "../components/common/LoadingSpinner";
+
 export default function Dashboard() {
   const [cryptos, setCryptos] = useState([]);
   const [loading, setLoading] = useState(true);
