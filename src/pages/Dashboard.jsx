@@ -40,7 +40,7 @@ export default function MarketDashboard() {
           <h1 className="text-2xl font-bold mb-6">Market Trends</h1>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-[#0052FF] text-white border-8px rounded-full font-bold px-6 py-2 w-120"
+            className="bg-[#0052FF] text-white border-8px rounded-full font-bold w-50"
           >
             Add Asset
           </button>
