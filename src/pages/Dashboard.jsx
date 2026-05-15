@@ -51,7 +51,7 @@ export default function MarketDashboard() {
           <AddAssetModal
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
-            onRefresh={refreshData}
+            onRefresh={refresh}
           />
           {["all", "gainers", "new"].map((tab) => (
             <button
