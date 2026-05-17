@@ -83,7 +83,7 @@ export default function AddAssetModal({ isOpen, onClose, onRefresh }) {
             <input 
               required
               className="w-full bg-black border border-[#2d2d2d] rounded-lg p-3 mt-1 focus:border-[#0052FF] outline-none"
-              placeholder="https://cryptoicons.org/api/icon/btc/200"
+              placeholder="https://assets.coingecko.com/coins/images/1/large/bitcoin.png"
               value={formData.image}
               onChange={(e) => setFormData({...formData, image: e.target.value})}
             />
