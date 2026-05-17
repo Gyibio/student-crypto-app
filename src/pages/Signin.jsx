@@ -9,7 +9,7 @@ export default function Signin() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const [showPassword, setShowPasswors] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSignin = async (e) => {
     e.preventDefault();
