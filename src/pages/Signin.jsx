@@ -80,7 +80,7 @@ export default function Signin() {
             className="w-full bg-black border border-[#2d2d2d] rounded-lg p-4 text-white focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] outline-none transition-all placeholder:text-[#575757]"
           />
           <label className="text-sm font-bold">Password</label>
-          <div>
+          <div className="relative w-full">
             <input
               type={showPassword ? "text" : "password"}
               onChange={(e) => setPassword(e.target.value)}
