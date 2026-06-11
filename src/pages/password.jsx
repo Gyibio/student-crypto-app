@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import LoadingSpinner from "../components/common/LoadingSpinner";
 
 export default function Password() {
   const [name, setName] = useState("");
@@ -9,12 +10,14 @@ export default function Password() {
   const location = useLocation();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   //Grab email passed from previous page
   const email = location.state?.email;
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/register`,
@@ -26,8 +29,13 @@ export default function Password() {
       }
     } catch (error) {
       alert("Registration failed", error);
+    }finally{
+      setLoading(false)
     }
   };
+  if (loading) {
+    return <LoadingSpinner message="COnnecting to secure vault..."/>;
+  }
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center pt-8 px-6 font-sans">
