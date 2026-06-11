@@ -34,7 +34,7 @@ export default function Password() {
     }
   };
   if (loading) {
-    return <LoadingSpinner message="COnnecting to secure vault..."/>;
+    return <LoadingSpinner message="Connecting to secure vault..."/>;
   }
 
   return (
@@ -56,6 +56,7 @@ export default function Password() {
               type="text"
               placeholder="Full name"
               onChange={(e) => setName(e.target.value)}
+              required
             />
 
             <label className="text-sm font-bold pt-7">Password</label>
@@ -65,6 +66,7 @@ export default function Password() {
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <button
                 type="button"
